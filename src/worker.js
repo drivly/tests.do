@@ -122,6 +122,8 @@ export default {
       latency: fetchMs,
     }
 
+    console.log(scope)
+
     const results = []
 
     for (const test of testsToRun) {
