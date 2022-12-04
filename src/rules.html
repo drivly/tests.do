@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>Tests.do Rules</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+  <body class="min-h-screen bg-neutral-900 text-white">
+    <div class="max-w-xl mx-auto p-4">
+      <h4 class="text-4xl text-rose-600 font-bold">
+        📓 Tests.do - How to use + Rules
+      </h4>
+
+      <h5 class="text-2xl text-rose-600 font-bold mt-4">
+        How to use
+      </h5>
+
+      <p>
+        Tests.do is a simple tool to create, and manage your tests all within a single URL.
+      </p>
+
+      <p class="my-4">
+        All you need to do to get started is think up what you want to test, and write a small bit of config in the URL and you are done:
+      </p>
+
+      <div class="bg-neutral-800/60 rounded-md p-2 text-neutral-400 font-medium text-sm">
+        <code class="font-bold block text-rose-600">./status == 200&headers.content-type += image/bucket.do/read/file.png</code>
+
+        <b class="block mt-2">
+          Will test:
+        </b>
+
+        <ul class="list-disc list-inside">
+          <li>
+            The status code of the URL is 200
+          </li>
+          <li>
+            The content-type header contains the string "image"
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- A pac man game -->
+
+    <div class="max-w-xl mx-auto p-4">
+      <h5 class="text-2xl text-rose-600 font-bold mt-4">
+        Rules
+      </h5>
+
+      <p>
+        Tests.do uses a simple, yet powerful rule syntax to create your tests.
+      </p>
+
+      <p class="my-4">
+        The rules are split into two parts:
+      </p>
+
+      <ul class="list-disc list-inside">
+        <li>
+          The path to the property you want to check
+        </li>
+        <li>
+          The operator and value you want to check against
+        </li>
+      </ul>
+
+      <p class="my-4">
+        The path is a series of dot-separated properties, that are traversed down the response object.
+      </p>
+
+      <p class="my-4">
+        The operators are simple strings that are used to compare the value of the property against the value you specify.
+      </p>
+
+      <p class="my-4">
+        The value is simply what you want to check against.
+      </p>
+
+      <h5 class="text-2xl text-rose-600 font-bold mt-4">
+        Operators
+      </h5>
+
+      <p class="my-4">
+        The following operators are available:
+      </p>
+
+      <ul class="list-disc list-inside">
+        <li>
+          <code>==</code> - The property must be equal to the value
+        </li>
+        <li>
+          <code>!=</code> - The property must not be equal to the value
+        </li>
+        <li>
+          <code>+=</code> - The property must include the value
+        </li>
+        <li>
+          <code>-=</code> - The property must not include the value
+        </li>
+        <li>
+          <code>>=</code> - The property must be greater than the value
+        </li>
+        <li>
+          <code><=</code> - The property must be less than the value
+        </li>
+      </ul>
+  </body>
+</html>

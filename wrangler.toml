@@ -1,0 +1,23 @@
+name = "tests-do"
+route = { pattern = "*/*", zone_name = "tests.do" }
+main = "./dist/index.mjs"
+compatibility_date = "2022-09-25"
+logpush = true
+
+services = [
+  { binding = "CTX", service = "ctx-do", environment = "production" }
+]
+
+[build]
+command = "npm run build"
+ 
+[build.upload]
+format = "modules"
+
+[miniflare]
+env_path = ".env"
+durable_objects_persist = "./data/"
+kv_persist = "./data/"
+
+[miniflare.mounts]
+ctx-do = "../ctx.do"

@@ -1,0 +1,25 @@
+{
+  "name": "tests.do",
+  "version": "1.0.0",
+  "description": "## Getting Started",
+  "main": "worker.js",
+  "module": "./dist/index.mjs",
+  "scripts": {
+    "build": "esbuild ./src/worker.js --bundle --format=esm --outfile=dist/index.mjs  --loader:.html=text --define:process.env.HMAC_SECRET=\"'$( echo $HMAC_SECRET )'\"",
+    "dev": "export $(cat .env | xargs) && npx miniflare@latest --watch",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drivly/tests.do.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drivly/tests.do/issues"
+  },
+  "homepage": "https://github.com/drivly/tests.do#readme",
+  "dependencies": {
+    "esbuild": "^0.15.16"
+  }
+}
