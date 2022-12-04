@@ -23,10 +23,10 @@ export const examples = {
 }
 
 export const tests = {
-  testEquals: 'https://assert.tests.do/status==200&body.data.boolean==true/tests.do/api/tests/demo',
-  testNotEquals: 'https://assert.tests.do/status==200&body.data.boolean!=false/tests.do/api/tests/demo',
-  testContains: 'https://assert.tests.do/status==200&body.data.string+=hello%20world/tests.do/api/tests/demo',
-  testNotContains: 'https://assert.tests.do/status==200&body.data.string-=foo/tests.do/api/tests/demo',
+  testEquals: 'https://assert.tests.do/status==200&body.data.boolean==true/bypass.tests.do/api/tests/demo',
+  testNotEquals: 'https://assert.tests.do/status==200&body.data.boolean!=false/bypass.tests.do/api/tests/demo',
+  testContains: 'https://assert.tests.do/status==200&body.data.string+=hello%20world/bypass.tests.do/api/tests/demo',
+  testNotContains: 'https://assert.tests.do/status==200&body.data.string-=foo/bypass.tests.do/api/tests/demo',
 }
 
 export default {
