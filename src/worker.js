@@ -129,7 +129,12 @@ export default {
       latency: fetchMs,
     }
 
-    console.log(scope)
+    const scope_small = {
+      ...scope
+    }
+
+    // Reduce the size of the body.
+    scope_small['body-text'] = scope_small['body-text'].substring(0, 600)
 
     const results = []
 
@@ -161,6 +166,7 @@ export default {
               data: {
                 success: false,
                 error: `Invalid key used, ${keys.join('.')} not found in scope`,
+                'scope': scope_small
               },
               user
             }, { status: 400 })
@@ -168,6 +174,18 @@ export default {
         }
 
         i++
+      }
+
+      if (!targetVar) {
+        return json({
+          api,
+          data: {
+            success: false,
+            error: `Invalid key used, ${keys.join('.')} not found in scope`,
+            'scope': scope_small
+          },
+          user
+        }, { status: 400 })
       }
       
       const result = {
