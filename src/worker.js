@@ -20,10 +20,14 @@ export const gettingStarted = [
 ]
 
 export const examples = {
+  testEquals: 'https://assert.tests.do/status==200&body.data.boolean==true/tests.tailwind.do/api/tests/demo',
+  testNotEquals: 'https://assert.tests.do/status==200&body.data.boolean!=false/bypass.tests.do/api/tests/demo',
+  testContains: 'https://assert.tests.do/status==200&body.data.string+=hello%20world/bypass.tests.do/api/tests/demo',
+  testNotContains: 'https://assert.tests.do/status==200&body.data.string-=foo/bypass.tests.do/api/tests/demo',
 }
 
 export const tests = {
-  testEquals: 'https://assert.tests.do/status==200&body.data.boolean==true/bypass.tests.do/api/tests/demo',
+  testEquals: 'https://assert.tests.do/status==200&body.data.boolean==true/tests.tailwind.do/api/tests/demo',
   testNotEquals: 'https://assert.tests.do/status==200&body.data.boolean!=false/bypass.tests.do/api/tests/demo',
   testContains: 'https://assert.tests.do/status==200&body.data.string+=hello%20world/bypass.tests.do/api/tests/demo',
   testNotContains: 'https://assert.tests.do/status==200&body.data.string-=foo/bypass.tests.do/api/tests/demo',
@@ -101,8 +105,11 @@ export default {
     // To prevent routing issues, we convert `/` to `\` when sending in the request,
     // we need to reverse this. Except for `\\` which is a literal `\`
 
+    // turn the query object into a url query string using URLSearchParams
+    
+
     const target = pathSegments.slice(1).join('/')
-    const response = await fetch(`https://` + target)
+    const response = await fetch(`https://` + target + '?' + new URLSearchParams(query).toString())
 
     const fetchMs = Date.now() - fetchStart
 
