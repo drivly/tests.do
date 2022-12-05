@@ -176,7 +176,7 @@ export default {
         i++
       }
 
-      if (!targetVar) {
+      if (targetVar === undefined) {
         return json({
           api,
           data: {
