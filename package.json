@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/drivly/tests.do#readme",
   "dependencies": {
-    "esbuild": "^0.15.16"
+    "esbuild": "^0.25.0"
   }
 }
